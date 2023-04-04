@@ -22,7 +22,7 @@ public class Main {
         continue;
       }
 //      System.out.println( input.toUpperCase() );
-      Pattern p = Pattern.compile( "(\\d*[,.]?\\d+)\\s*([/*-+])\\s*(\\d*[,.]?\\d+)" );
+      Pattern p = Pattern.compile( "\\s*(\\d*[,.]?\\d+)\\s*([/*-+])\\s*(\\d*[,.]?\\d+)\\s*" );
       Matcher m = p.matcher( input );
       if ( m.matches() ) {
         Double doubleResult = solve( m.group( 1 ), m.group( 3 ), m.group( 2 ) );
@@ -32,8 +32,7 @@ public class Main {
           System.out.println( "= " + new DecimalFormat().format( doubleResult ) );
       }
       else
-        System.err.println("### No valid input! ###");
-
+        System.err.println("### No valid input! ###");      
     }
   }
 
